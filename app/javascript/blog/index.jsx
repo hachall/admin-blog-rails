@@ -19,11 +19,16 @@ const reducers = combineReducers({
   form: formReducer
 });
 
+const root = document.getElementById('root')
+const initialState = {
+  posts: JSON.parse(root.dataset.posts)
+}
+
 const middlewares = applyMiddleware(reduxPromise, logger);
 
 // render an instance of the component in the DOM
 ReactDOM.render(
-  <Provider store={createStore(reducers, {}, middlewares)}>
+  <Provider store={createStore(reducers, initialState, middlewares)}>
     <Router history={history}>
       <div className="thin-container">
         <Switch>
@@ -34,5 +39,5 @@ ReactDOM.render(
       </div>
     </Router>
   </Provider>,
-  document.getElementById('root')
+  root
 );
