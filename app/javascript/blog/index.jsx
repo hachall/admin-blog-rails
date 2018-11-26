@@ -8,7 +8,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { createHistory as history } from 'history';
 import { reducer as formReducer } from 'redux-form';
 
-import '../assets/stylesheets/application.scss';
 import postsReducers from './reducers/posts_reducer.jsx'
 
 import PostsIndex from './containers/posts_index';
